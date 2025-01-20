@@ -1,0 +1,4 @@
+Store 'id' : 'BSON' --> Binary JSON.
+Optimization technic through which MongoDB compresses heavy data types (int 4 bytes) into lesser ones.
+
+JSON is a lightweight data type. That converts Object/Dictionaries into 'strings':

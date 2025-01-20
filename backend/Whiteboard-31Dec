@@ -1,0 +1,93 @@
+/* Brainstorming session 2 - 31st Decembre 2024 - 14:15 */
+
+-----------------------------------------------------------------------------------
+
+DHAABU PHASE 1: BEFORE ALX
+
+* Only has 2 UI (2 pages).
+  --> Page 1: Home page.
+  --> Page 2: Profile page.
+  
+
+* Profile page:
+  --> '/' GET
+  --> 'users/connect' POST
+  --> 'users/disconnect' GET
+  --> 'users/edit' PUT/POST
+  --> 'users/delete' DEL
+  --> 'post/delete' DEL
+  --> 'profile picture handling'.
+  --> 'filters' feature
+  --> 'Collapsible Menu': Filled with options such as:
+      _ Home
+      _ About
+      _ QA section
+      _ Settings
+
+Associated Endpoint and Content:
+{
+	/about : <h1>About Page</h1>
+	/settings : <h1>Settings Page</h1>
+	/QA : <h1>QA Page</h1>
+}
+
+-----------------------------------------------------------------------------------
+
+				ROUTES
+
+---
+{
+  [l]: requires_login,
+  [x]: requires_authentication,
+}
+---
+
+TOKEN BASED AUTH: {
+        'users/signUp' POST,
+	'users/signIn' POST,
+	'users/signOut' GET,
+	'users/me' GET : returns a Profile Object,
+}
+
+AUTH --> AuthController
+  * /signup --> { username, email, password1, password2}
+  * /signin
+  * /signout [l]
+
+HOME
+  * '/'
+
+POSTS --> PostsController
+  * /posts/add
+  * /posts/<postId>
+  * /posts/<postId>/edit [lx]
+  * /posts/<postId>/delete [lx]
+  * /posts/<postId>/comment [l]
+  * /posts/<postId>/like [l]
+  * /posts/<postId>/save [l]
+  * /posts/<postId>/share
+  * /posts/<userId>
+
+PROFILE --> ProfilesController
+  * /profile/<userId> [lx]
+  * /profile/<userId>/edit [lx]
+  * /profile/<userId>/delete [lx]
+
+COLLAPSIBLE MENU --> FeaturesController
+  * /about
+  * /settings [l]
+  * /QA
+
+-----------------------------------------------------------------------------------
+
+CLARIFICATIONS:
+
+* Length of posts:
+  --> View for longer posts (API endpoint and 'Expand' feature).
+* Home Route: Static page ? What's the view ?
+* Logged in User;
+  _ How to ensure a session has been created ?
+      <RedisClient.set()>
+  _ Does Redis take care of that ? Something else, an Extra feature ? 
+  _ How to protect logged in routes after logouts ?
+      <Middleware Request Preprocessing>

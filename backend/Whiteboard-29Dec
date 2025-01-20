@@ -1,0 +1,15 @@
+/* Brainstorming session 2 - 29th Decembre 2024 - 15:09 */
+
+-----------------------------------------------------------------------------------
+
+In MongoDB, the 'DBClient' has access to a 'isConnect' METHOD and NOT a (class) attributes.
+
+------------------------------------------------------------------
+
+* RedisCLient connects directly to a Redis Server.
+* A MongoDB client using the 'MongoDBClient' does not direclt connect to the mongoDB instance by default. (USE THE 'this.client.connect() METHOD !!!')
+
+------------------------------------------------------------------
+
+WARNING:
+	* DBclient methods 'nbUsers' anf 'nbFiles' aren't executed at all.

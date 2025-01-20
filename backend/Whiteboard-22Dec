@@ -1,0 +1,40 @@
+/* Brainstorming session 1 - 22nd Decembre 2024 - 21:40 */
+
+-----------------------------------------------------------------------------------
+
+Pato:
+	* "At what point do we need User models ?" -->  TIME
+	* "How do we implement data modeling ?"    -->  MANNER/METHOD/APPROCH
+
+------------------------------------------------------------------------------------
+
+JP:
+	* Additional MongoDB methods.
+
+------------------------------------------------------------------------------------
+
+* NbUsers return value
+
+------------------------------------------------------------------------------------
+
+
+// Steps to manipulation a Database
+
+1. Create a client:
+   * Someone.
+   * A customer
+   * Someone whom you will send through request to the Database.
+   * e.g: Having a maid/servant.
+
+--> Create an Object.
+
+2. That someone needs to be recognized by the the DB:
+   * Establish a connection.
+   * A Contract.
+
+--> Run a connection creating method/function.
+
+3. Start the connection.
+   * CRUD operations.
+
+--> Run CRUD commands.
