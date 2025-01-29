@@ -11,6 +11,11 @@ class DBClient {
     const PORT = process.env.DB_PORT || '27017';
     const DATABASE = process.env.DB_NAME || 'dhaabu_db';
 
+    /*
+    const HOST = process.env.DB_HOST || '127.0.0.1';
+    console.log(HOST);
+    */
+
     const uri = `mongodb://${HOST}:${PORT}/${DATABASE}`;
 
     // Create a Client

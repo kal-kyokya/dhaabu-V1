@@ -9,10 +9,13 @@ const app = express();
 // Initialize the app
 const PORT = process.env.PORT || 5000;
 
-// Enable Cross-Origin Resource Sharing on the app
+/*
+  Enable Cross-Origin Resource Sharing between
+  the Node JS app & the frontend Vite React App
+*/
 app.use(
   cors({
-      origin: 'http://localhost:5173',
+    origin: 'http://localhost:5173',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
   })
 );
